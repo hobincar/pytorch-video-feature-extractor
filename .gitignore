@@ -1,0 +1,7 @@
+**/__pycache__
+**/*.swp
+**/*.pyc
+
+datasets
+features
+.env
