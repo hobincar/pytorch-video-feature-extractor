@@ -72,7 +72,6 @@ class C3D(nn.Module):
 def c3d(pretrained=False):
     model = C3D()
     if pretrained:
-        model.load_state_dict(load_state_dict_from_url(
-            "http://imagelab.ing.unimore.it/files/c3d_pytorch/c3d.pickle", progress=True))
+        model.load_state_dict("pretrained_models/c3d.pickle")
     return model
 

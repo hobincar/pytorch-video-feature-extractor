@@ -52,7 +52,7 @@ def sample_frames_metafunc(stride):
             frames.append(frame)
             frame_count += 1
     
-        indices = list(range(0, frame_count, stride))
+        indices = list(range(8, frame_count - 7, stride))
     
         frames = np.array(frames)
         frame_list = frames[indices]
@@ -80,7 +80,6 @@ def sample_clips_metafunc(stride):
             frames.append(frame)
             frame_count += 1
     
-        # indices = np.linspace(8, frame_count - 7, max_frames, endpoint=False, dtype=int)
         indices = list(range(8, frame_count - 7, stride))
 
         frames = np.array(frames)
@@ -97,6 +96,7 @@ def preprocess_frame_metafunc(mean, std, resize_to, crop_to):
     def preprocess_frame(image):
         image = np.asarray(image, dtype=np.float64)
         image = resize_frame(image, *resize_to)
+        image /= 255.
         image -= np.asarray(mean)
         image /= np.asarray(std)
         if crop_to is not None:
@@ -120,6 +120,7 @@ def preprocess_clip_metafunc(mean, std, resize_to, crop_to):
 
     def preprocess_clip(clip):
         clip = np.array([ preprocess_frame(frame) for frame in clip ])
+        clip /= 255.
         clip -= mean
         clip /= np.asarray(std)
         return clip

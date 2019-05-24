@@ -39,7 +39,8 @@ class C3D(AbstractConfig):
     import numpy as np
     mean = np.load("data/c3d_mean.npy")
     mean = mean.squeeze(0).transpose(1, 2, 3, 0)
-    std = ( 1., 1., 1. )
+    mean /= 255.
+    std = ( 0.5, 0.5, 0.5 )
     resize_to = ( 171, 128 )
     crop_to = ( 112, 112 )
 

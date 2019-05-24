@@ -28,7 +28,6 @@ if __name__ == '__main__':
     model.cuda()
     model.eval()
 
-
     nets_3d = [ 'c3d' ]
     FeatureExtractor = FeatureExtractor3D if args.model in nets_3d else FeatureExtractor2D
     extractor = FeatureExtractor(
@@ -46,10 +45,11 @@ if __name__ == '__main__':
         video_id = os.path.splitext(video)[0]
         if video_id in h5.keys():
             continue
-        
+
         video_fpath = os.path.join(args.video_dpath, video)
         feats = extractor(video_fpath)
-        h5[video_id] = feats
+        if feats is not None:
+            h5[video_id] = feats
 
     h5.close()
 
