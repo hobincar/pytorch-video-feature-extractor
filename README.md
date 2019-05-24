@@ -1,4 +1,4 @@
-# video-feature-extractor
+# pytorch-video-feature-extractor
 
 Extract video features from pre-trained CNNs.
 
