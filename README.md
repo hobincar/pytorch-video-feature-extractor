@@ -48,7 +48,11 @@ For example, for my case
         ...
 ```
 
-### Step 3. Extract CNN features from videos.
+### Step 3. Download pretrained model
+
+For C3D, you can download it by following [here](https://github.com/DavideA/c3d-pytorch). For other models, it will be automatically downloaded.
+
+### Step 4. Extract CNN features from videos.
 
 For example, to extract VGG19 features,
 
