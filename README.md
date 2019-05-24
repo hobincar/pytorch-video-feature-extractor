@@ -30,7 +30,7 @@ Extract video features from pre-trained CNNs.
 ### Step 1. Install python packages specified in `requirements.txt`
 
 ```
-$ virtualenv .env
+$ python -m venv .env
 $ source .env/bin/activate
 (.env) $ pip install --upgrade pip
 (.env) $ pip install -r requirements.txt
