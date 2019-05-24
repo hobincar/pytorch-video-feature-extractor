@@ -1,3 +1,4 @@
+import torch
 import torch.nn as nn
 from .utils import load_state_dict_from_url
 
@@ -59,19 +60,19 @@ class C3D(nn.Module):
 
         h = h.view(-1, 8192)
         h = self.relu(self.fc6(h))
-        h = self.dropout(h)
+        # h = self.dropout(h)
         # h = self.relu(self.fc7(h))
         # h = self.dropout(h)
 
         # logits = self.fc8(h)
         # probs = self.softmax(logits)
 
-        return probs
+        return h
 
 
 def c3d(pretrained=False):
     model = C3D()
     if pretrained:
-        model.load_state_dict("pretrained_models/c3d.pickle")
+        model.load_state_dict(torch.load("pretrained_models/c3d.pickle"))
     return model
 
