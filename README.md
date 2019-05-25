@@ -23,7 +23,6 @@ Extract video features from pre-trained CNNs.
 * ShuffleNet
 * SqueezeNet
 * InceptionNet (v3 & v4)
-* C3D
 
 ## How to use
 
@@ -48,13 +47,9 @@ For example, for my case
         ...
 ```
 
-### Step 3. Download pretrained model
+### Step 3. Extract CNN features from videos.
 
-For C3D, you can download it by following [here](https://github.com/DavideA/c3d-pytorch), and locate it as `pretrained_models/c3d.pickle`. For other models, it will be automatically downloaded.
-
-### Step 4. Extract CNN features from videos.
-
-For example, to extract VGG19 features,
+For example, to extract VGG19 features from 'MSVD' dataset,
 
 ```
 (.env) $ python main.py \
@@ -80,13 +75,10 @@ For example, to extract VGG19 features,
 * SqueezeNet: https://github.com/pytorch/vision/blob/master/torchvision/models/squeezenet.py
 * InceptionNet-v3: https://github.com/pytorch/vision/blob/master/torchvision/models/inception.py
 * InceptionNet-v4: https://github.com/Cadene/pretrained-models.pytorch/blob/master/pretrainedmodels/models/inceptionv4.py
-* C3D: https://github.com/DavideA/c3d-pytorch/blob/master/C3D_model.py
 
 
 ## Acknowlegement
 
 I got the codes and pre-trained models from
-[pytorch/vision](https://github.com/pytorch/vision),
-[Cadene/pretrained-models.pytorch](https://github.com/Cadene/pretrained-models.pytorch), and
-[DavideA/c3d-pytorch](https://github.com/DavideA/c3d-pytorch).
+[pytorch/vision](https://github.com/pytorch/vision), and [Cadene/pretrained-models.pytorch](https://github.com/Cadene/pretrained-models.pytorch).
 Many thanks!
