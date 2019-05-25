@@ -8,5 +8,4 @@ from .resnet import resnet18, resnet34, resnet50, resnet101, resnet152, resnext5
 from .shufflenetv2 import shufflenet_v2_x0_5, shufflenet_v2_x1_0
 from .squeezenet import squeezenet1_0, squeezenet1_1
 from .vgg import vgg11, vgg13, vgg16, vgg19, vgg11_bn, vgg13_bn, vgg16_bn, vgg19_bn
-from .c3d import c3d
 

@@ -5,7 +5,7 @@ import h5py
 from tqdm import tqdm
 
 from config import config
-from feature_extractor import FeatureExtractor2D, FeatureExtractor3D
+from feature_extractor import FeatureExtractor2D
 import nets
 
 
@@ -28,9 +28,7 @@ if __name__ == '__main__':
     model.cuda()
     model.eval()
 
-    nets_3d = [ 'c3d' ]
-    FeatureExtractor = FeatureExtractor3D if args.model in nets_3d else FeatureExtractor2D
-    extractor = FeatureExtractor(
+    extractor = FeatureExtractor2D(
         stride=args.stride,
         mean=config.mean,
         std=config.std,
