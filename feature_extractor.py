@@ -33,7 +33,7 @@ class FeatureExtractor(ABC):
 
     def __call__(self, video_fpath):
         X, frame_number = self.sample_func(video_fpath)
-        if frame_number == 0:
+        if X.shape[0] == 0:
             return None
 
         X = np.array([ self.preprocess_func(x) for x in X ])
