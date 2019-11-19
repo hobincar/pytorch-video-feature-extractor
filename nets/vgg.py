@@ -42,7 +42,7 @@ class VGG(nn.Module):
         x = self.features(x)
         x = self.avgpool(x)
         x = x.view(x.size(0), -1)
-        # x = self.classifier(x)
+        x = self.classifier(x)
         return x
 
     def _initialize_weights(self):
@@ -91,6 +91,11 @@ def _vgg(arch, cfg, batch_norm, pretrained, progress, **kwargs):
         state_dict = load_state_dict_from_url(model_urls[arch],
                                               progress=progress)
         model.load_state_dict(state_dict)
+
+    # To get final FC features
+    del model.classifier[-1]
+    del model.classifier[-1]
+    del model.classifier[-1]
     return model
 
 
