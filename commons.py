@@ -10,20 +10,20 @@ def resize_frame(image, target_height, target_width):
 
     height, width, channels = image.shape
     if height == width:
-        resized_image = cv2.resize(image, (target_height, target_width))
+        resized_image = cv2.resize(image, (target_width, target_height))
     elif height < width:
-        resized_image = cv2.resize(image, (int(width * target_height / height),
-                                           target_width))
+        resized_image = cv2.resize(image, (target_width,
+                                           int(width * target_height / height)))
         cropping_length = int((resized_image.shape[1] - target_height) / 2)
         resized_image = resized_image[:,
                                       cropping_length:resized_image.shape[1] - cropping_length]
     else:
-        resized_image = cv2.resize(image, (target_height,
-                                           int(height * target_width / width)))
+        resized_image = cv2.resize(image, (int(height * target_width / width),
+                                           target_height))
         cropping_length = int((resized_image.shape[0] - target_width) / 2)
         resized_image = resized_image[cropping_length:
                                       resized_image.shape[0] - cropping_length]
-    return cv2.resize(resized_image, (target_height, target_width))
+    return cv2.resize(resized_image, (target_width, target_height))
 
 
 def center_crop_frame(image, th, tw):
