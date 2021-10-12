@@ -12,7 +12,7 @@ matplotlib==3.0.3
 networkx==2.3
 nltk==3.4.5
 numpy==1.16.2
-opencv-python==4.1.0.25
+opencv-python==4.1.1.26
 pandas==0.24.2
 parse==1.12.0
 parso==0.4.0
