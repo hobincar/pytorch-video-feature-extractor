@@ -4,7 +4,7 @@ decorator==4.4.0
 h5py==2.9.0
 imageio==2.5.0
 ipdb==0.12
-ipython==7.4.0
+ipython==7.16.3
 ipython-genutils==0.2.0
 jedi==0.13.3
 kiwisolver==1.0.1
